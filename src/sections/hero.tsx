@@ -17,9 +17,9 @@ const Hero = () => {
                                         {
                                             words.map((word) => (
                                                 <span key={word.text} className="flex items-center md:gap-3 gap-1 pb-2">
-                                                    <img 
-                                                        src={word.imgPath} 
-                                                        alt={word.text} 
+                                                    <img
+                                                        src={word.imgPath}
+                                                        alt={word.text}
                                                         className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                                                     />
 
@@ -35,6 +35,9 @@ const Hero = () => {
                             <h1>into Real Projects</h1>
                             <h1>that Deliver Results</h1>
                         </div>
+                        <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+                            Hi, I'm Fitiavana, a developer based in Madagascar with a passion for code.
+                        </p>
                     </div>
                 </header>
             </div>
