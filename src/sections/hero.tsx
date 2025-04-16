@@ -1,4 +1,5 @@
 import { words } from "../../constants"
+import Button from "../components/button"
 
 const Hero = () => {
     return (
@@ -38,6 +39,11 @@ const Hero = () => {
                         <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
                             Hi, I'm Fitiavana, a developer based in Madagascar with a passion for code.
                         </p>
+                        <Button
+                            className="md:w-80 md:h-16 w-60 h-12"
+                            id="button"
+                            text="See my Work"
+                        />
                     </div>
                 </header>
             </div>
