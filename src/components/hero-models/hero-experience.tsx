@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber"
 
 const HeroExperience = () => {
     const isTablet = false;
+
     return (
         <Canvas
             camera={{
@@ -21,6 +22,7 @@ const HeroExperience = () => {
                 minPolarAngle={Math.PI / 5}
                 maxPolarAngle={Math.PI / 2}
             />
+
             <mesh>
                 <boxGeometry args={[1, 1, 1]} />
                 <meshStandardMaterial color="blue" />
