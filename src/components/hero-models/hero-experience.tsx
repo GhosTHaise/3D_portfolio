@@ -1,10 +1,11 @@
 import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useMediaQuery } from "react-responsive";
+import { Room } from "./room";
 
 const HeroExperience = () => {
-    const isTablet = useMediaQuery({query : 'max-width : 1024px'});
-    const isMobile = useMediaQuery({query : 'max-width : 768px'});
+    const isTablet = useMediaQuery({ query: 'max-width : 1024px' });
+    const isMobile = useMediaQuery({ query: 'max-width : 768px' });
 
     return (
         <Canvas
@@ -14,7 +15,7 @@ const HeroExperience = () => {
             }}
         >
             <ambientLight intensity={0.2} color="#1a1a40" />
-            <directionalLight position={[5, 5, 5]} intensity={5} />
+            <directionalLight position={[5, 5, 5]} intensity={2} />
 
             <OrbitControls
                 enablePan={false}
@@ -25,10 +26,13 @@ const HeroExperience = () => {
                 maxPolarAngle={Math.PI / 2}
             />
 
-            <mesh>
-                <boxGeometry args={[1, 1, 1]} />
-                <meshStandardMaterial color="blue" />
-            </mesh>
+            <group 
+                scale={isMobile ? 0.7  :1}
+                position={[0, -3.5, 0]}
+                rotation={[0, -Math.PI / 4,0]}
+            >
+                <Room />
+            </group>
         </Canvas>
     )
 }
