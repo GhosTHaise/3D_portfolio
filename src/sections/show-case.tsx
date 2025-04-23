@@ -32,7 +32,7 @@ const ShowCase = () => {
                 <div className="showcaselayout">
                     <div className="first-project-wrapper" ref={project1Ref}>
                         <div className="image-wrapper">
-                            <img src="/images/project1.png" alt="rude" />
+                            <img src="/images/project1.png" alt="Screenshot of the Ryde app showcasing on-demand rides" />
                         </div>
                         <div className="text-content">
                             <h2>On-Demand Rides Made Simple with a Powerful, User-Friendly App called Ryde</h2>
