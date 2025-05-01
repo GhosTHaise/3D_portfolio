@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-//import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/title-header";
 import ContactExperience from "../components/models/contact/contact-experience";
 
 const Contact = () => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -13,20 +13,21 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true); // Show loading state
+    console.log("🚀 ~ handleSubmit ~ e:", e)
 
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        formRef.current!,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
@@ -93,7 +94,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button disabled={loading} type="submit">
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
